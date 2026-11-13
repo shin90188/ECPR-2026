@@ -219,6 +219,8 @@ input:disabled{background:#F0EEEA;color:#A9A59D}
           <option value="1" selected>1 次</option>
           <option value="2">2 次</option>
           <option value="3">3 次</option>
+          <option value="4">4 次</option>
+          <option value="5">5 次</option>
         </select></div>
     </div>
     <div id="rounds"></div>
@@ -334,8 +336,8 @@ const ECPR_REASONS = [
 ];
 
 const $ = id => document.getElementById(id);
-const SLIDE_W = 1600, INNER_W = 1586 - 50 - 56, MAXR = 3;
-const CIRC = ['①','②','③'];
+const SLIDE_W = 1600, INNER_W = 1586 - 50 - 56, MAXR = 5;
+const CIRC = ['①','②','③','④','⑤'];
 const state = { mode:'OHCA' };
 const esc = s => String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
 
@@ -659,7 +661,7 @@ function autofitSheet(){
   let k=1, guard=0;
   sl.style.setProperty('--k',k);
   const avail=900-el.offsetTop-44;
-  while(el.scrollHeight>avail && k>0.55 && guard++<28){
+  while(el.scrollHeight>avail && k>0.48 && guard++<32){
     k=+(k-0.04).toFixed(2); sl.style.setProperty('--k',k);
   }
 }
